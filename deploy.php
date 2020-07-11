@@ -49,8 +49,8 @@ task('build', function () {
 task('yarn:install', function () {
     run('cd {{release_path}} && yarn install');
 });
-task('yarn:run:dev', function () {
-    run('cd {{release_path}} && yarn run dev');
+task('yarn:dev', function () {
+    run('cd {{release_path}} && yarn dev');
 });
 task('reload:php-fpm', function () {
     run('sudo /etc/init.d/php7.2-fpm reload');
@@ -76,7 +76,7 @@ task('deploy', [
     'cleanup',
     'reload:php-fpm',
     'yarn:install',
-    'yarn:run:dev',
+    'yarn:dev',
 ]);
 
 // [Optional] if deploy fails automatically unlock.
