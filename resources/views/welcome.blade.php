@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Hà Công Thành
                 </div>
 
                 <div class="links">
