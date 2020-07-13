@@ -50,7 +50,7 @@ task('yarn:install', function () {
     run('cd {{release_path}} && yarn install');
 });
 task('yarn:dev', function () {
-    run('cd {{release_path}} && yarn dev');
+    run('cd {{release_path}} && yarn dev --scripts-prepend-node-path');
 });
 task('reload:php-fpm', function () {
     run('sudo /etc/init.d/php7.2-fpm reload');
