@@ -46,11 +46,11 @@ host('149.28.136.241')
 task('build', function () {
     run('cd {{release_path}} && build');
 });
-task('yarn:install', function () {
-    run('cd {{release_path}} && yarn install');
+task('npm:run:install', function () {
+    run('cd {{release_path}} && npm install');
 });
-task('yarn:dev', function () {
-    run('cd {{release_path}} && yarn dev');
+task('npm:run:dev', function () {
+    run('cd {{release_path}} && npm run dev');
 });
 task('reload:php-fpm', function () {
     run('sudo /etc/init.d/php7.2-fpm reload');
@@ -75,8 +75,8 @@ task('deploy', [
     'deploy:unlock',
     'cleanup',
     'reload:php-fpm',
-    'yarn:install',
-    'yarn:dev',
+    'npm:run:install',
+    'npm:run:dev',
 ]);
 
 // [Optional] if deploy fails automatically unlock.
